@@ -1,0 +1,23 @@
+name: vue_boilerplate_blatisgense
+version: '3.9'
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+      - VITE_APP_PORT=${VITE_APP_PORT}
+    volumes:
+      - frontend_node_modules:/app/node_modules
+    ports:
+      - ${VITE_APP_PORT}:${VITE_APP_PORT}
+    working_dir: /app
+    restart: always
+    image: frontend
+    container_name: container_name
+    stdin_open: true
+    command: ["vite", "--host"]
+
+volumes:
+  frontend_node_modules:

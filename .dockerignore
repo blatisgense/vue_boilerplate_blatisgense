@@ -1,0 +1,11 @@
+node_modules/
+.idea/
+tests/
+cypress/
+Dockerfile
+docker-compose.yml
+.dockerignore
+.env
+.git
+.gitignore
+.gitattributes
